@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Buena Pinta - Tienda de ropa</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .hero-landing {
+        min-height: 100vh;
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-landing::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: 
+          radial-gradient(circle at 15% 30%, rgba(255, 107, 107, 0.12) 0%, transparent 50%),
+          radial-gradient(circle at 85% 70%, rgba(34, 221, 0, 0.08) 0%, transparent 50%);
+        pointer-events: none;
+      }
+
+      .hero-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 60px;
+        max-width: 1400px;
+        width: 100%;
+        padding: 80px 60px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .hero-content {
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+      }
+
+      .hero-subtitle {
+        font-size: 16px;
+        color: #22dd00;
+        font-weight: 700;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        animation: fadeInDown 0.8s ease-out;
+      }
+
+      .hero-content h1 {
+        font-size: 96px;
+        font-weight: 900;
+        margin: 0;
+        background: linear-gradient(135deg, #ff6b6b 0%, #ff8787 50%, #ffb3b3 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        letter-spacing: -3px;
+        line-height: 1;
+        animation: fadeInDown 0.8s ease-out 0.1s both;
+      }
+
+      .tagline {
+        font-size: 20px;
+        color: #cbd5e1;
+        margin: 0;
+        font-weight: 400;
+        line-height: 1.8;
+        max-width: 500px;
+        animation: fadeInUp 0.8s ease-out 0.2s both;
+      }
+
+      .cta-buttons {
+        display: flex;
+        gap: 20px;
+        animation: fadeInUp 0.8s ease-out 0.3s both;
+      }
+
+      .cta-button {
+        display: inline-block;
+        background: linear-gradient(135deg, #22dd00 0%, #1fb500 100%);
+        color: #000;
+        padding: 16px 44px;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 15px;
+        transition: all 0.3s ease;
+        border: none;
+        cursor: pointer;
+        box-shadow: 0 12px 35px rgba(34, 221, 0, 0.3);
+      }
+
+      .cta-button:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 18px 50px rgba(34, 221, 0, 0.45);
+      }
+
+      .cta-button-secondary {
+        background: transparent;
+        color: #ff6b6b;
+        border: 2px solid #ff6b6b;
+        box-shadow: none;
+      }
+
+      .cta-button-secondary:hover {
+        background: rgba(255, 107, 107, 0.1);
+      }
+
+      .hero-images {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+        position: relative;
+      }
+
+      .hero-image-box {
+        position: relative;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+        animation: slideInRight 0.8s ease-out;
+      }
+
+      .hero-image-box:nth-child(2) {
+        animation-delay: 0.1s;
+      }
+
+      .hero-image-box:nth-child(3) {
+        grid-column: 1 / -1;
+        animation-delay: 0.2s;
+      }
+
+      .hero-image-box img {
+        width: 100%;
+        height: 350px;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.4s ease;
+      }
+
+      .hero-image-box:nth-child(3) img {
+        height: 300px;
+      }
+
+      .hero-image-box:hover img {
+        transform: scale(1.08);
+      }
+
+      .image-label {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        background: rgba(0, 0, 0, 0.8);
+        color: #22dd00;
+        padding: 10px 20px;
+        border-radius: 8px;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        backdrop-filter: blur(10px);
+      }
+
+      .image-discount {
+        color: #ff6b6b;
+      }
+
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes slideInRight {
+        from {
+          opacity: 0;
+          transform: translateX(50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      @media (max-width: 1100px) {
+        .hero-container {
+          grid-template-columns: 1fr;
+          gap: 50px;
+          padding: 60px 40px;
+        }
+
+        .hero-content h1 {
+          font-size: 72px;
+        }
+
+        .tagline {
+          font-size: 18px;
+        }
+
+        .hero-image-box img {
+          height: 300px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .hero-landing {
+          min-height: auto;
+        }
+
+        .hero-container {
+          padding: 40px 20px;
+          gap: 30px;
+        }
+
+        .hero-content h1 {
+          font-size: 56px;
+        }
+
+        .cta-buttons {
+          flex-direction: column;
+        }
+
+        .hero-image-box img {
+          height: 250px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="brand">Buena Pinta</div>
+      <nav class="main-nav">
+        <a href="hombre.html" class="nav-link">Hombre</a>
+        <a href="mujer.html" class="nav-link">Mujer</a>
+        <a href="descuento.html" class="nav-link">Descuento</a>
+        <a href="carrito.html" class="nav-link">Carrito <span id="cart-count">0</span></a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero hero-landing">
+        <div class="hero-container">
+          <div class="hero-content">
+            <div>
+              <p class="hero-subtitle">Moda Urbana</p>
+              <h1>Buena Pinta</h1>
+            </div>
+            <p class="tagline">Descubre la mejor colección de ropa con estilo. Diseñado para quienes aprecian la calidad y el diseño.</p>
+            <div class="cta-buttons">
+              <a href="descuento.html" class="cta-button">EXPLORAR AHORA</a>
+              <a href="hombre.html" class="cta-button cta-button-secondary">VER CATÁLOGO</a>
+            </div>
+          </div>
+
+          <div class="hero-images">
+            <div class="hero-image-box">
+              <span class="image-label">HOMBRE</span>
+              <img src="https://media.gq.com.mx/photos/62d19f3e6aa31fec621b11cd/1:1/w_2000,h_2000,c_limit/como-usar-playera-negra-hombre.jpg" alt="Colección Hombre">
+            </div>
+            <div class="hero-image-box">
+              <span class="image-label">MUJER</span>
+              <img src="https://images.asos-media.com/products/vestido-corto-rojo-con-cuerpo-tipo-corse-y-escote-palabra-de-honor-de-lentejuelas-maya-exclusivo-de-wander-doll/207381358-3?$n_640w$&wid=513&fit=constrain" alt="Colección Mujer">
+            </div>
+            <div class="hero-image-box">
+              <span class="image-label image-discount">DESCUENTOS -50%</span>
+              <img src="https://estilodelpeluquero.com/wp-content/uploads/2025/05/moda.jpg" alt="Descuentos Especiales">
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; <span id="year"></span> Buena Pinta – Todos los derechos reservados</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Carrito - Buena Pinta</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .cart-item {
+        display: flex;
+        gap: 12px;
+        padding: 12px;
+        background: var(--glass);
+        border-radius: 10px;
+        align-items: center;
+        border-left: 3px solid var(--accent);
+      }
+
+      .cart-item-image {
+        width: 150px;
+        height: 150px;
+        border-radius: 8px;
+        object-fit: cover;
+        flex-shrink: 0;
+      }
+
+      .cart-item-content {
+        flex: 1;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .cart-item-details {
+        flex: 1;
+      }
+
+      .cart-item-name {
+        font-weight: 700;
+        margin-bottom: 4px;
+        font-size: 14px;
+      }
+
+      .cart-item-meta {
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .cart-item-price {
+        color: var(--accent);
+        font-weight: 700;
+        font-size: 15px;
+        white-space: nowrap;
+      }
+
+      .cart-item-controls {
+        display: flex;
+        gap: 6px;
+        align-items: center;
+      }
+
+      .cart-item-controls input {
+        width: 45px;
+        padding: 5px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 6px;
+        background: var(--card);
+        color: #e6eef8;
+        font-size: 12px;
+        text-align: center;
+      }
+
+      .cart-item-controls .btn {
+        padding: 6px 10px;
+        font-size: 12px;
+      }
+
+      .cart-item-details {
+        min-width: 0;
+      }
+
+      @media (max-width: 600px) {
+        .cart-item {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .cart-item-content {
+          flex-direction: column;
+          width: 100%;
+          align-items: flex-start;
+        }
+
+        .cart-item-controls {
+          width: 100%;
+          justify-content: flex-end;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="brand">Buena Pinta</div>
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link">Portada</a>
+        <a href="descuento.html" class="nav-link">Descuento</a>
+        <a href="hombre.html" class="nav-link">Hombre</a>
+        <a href="mujer.html" class="nav-link">Mujer</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="section cart-section">
+        <h2>Mi Carrito</h2>
+        <div id="cart-items"></div>
+        <div class="cart-footer">
+          <div class="total">Total: S/ <span id="cart-total">0.00</span></div>
+          <button id="clear-cart" class="btn">Vaciar carrito</button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; <span id="year"></span> Buena Pinta</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
